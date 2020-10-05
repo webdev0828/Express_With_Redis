@@ -1,5 +1,15 @@
+
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.sports-navigation-mob
+    div.sport-nav-container-mob
+      ul 
+        each sport in sportTree
+          li
+            a
+              span(class='sport-icon-mob ' + sport.name.replace(/ /, '').replace(/-/, ''))
+                i.games-count-view-mob=sport.count
+              p= sport.name
+
+

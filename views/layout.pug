@@ -2,6 +2,19 @@ doctype html
 html
   head
     title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no,minimal-ui')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    div.header-construction-mob
+      div.header-separator-mob
+        div.sw-contain-b
+          label.left-top-nav-mob
+            span Menu
+        div.logo-wrapper-mob
+            a(href="/")
+        div.sw-contain-b
+          label.right-top-nav-mob
+            span 
+    div.wrapper-mob
+
     block content
