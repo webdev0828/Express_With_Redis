@@ -3,9 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var redis = require('redis');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+var port_redis = process.env.PORT | 6379;
+var client = redis.createClient();
+
+client.on('error', function(err) {
+  console.log(err);
+})
+
+client.on('connect', function() {
+  console.log('redis connecteed');
+  client.set('name', 'Andrei');
+})
 
 var app = express();
 
